@@ -28,10 +28,20 @@ void material_menu_function(int option)
 }
 
 void shader_menu_function(int option) {
-	if (selected_obj > -1)
+	if (selected_obj > -1) {
 		Scena[selected_obj].sceltaVS = shaders[option].value;
-
+		if (Scena[selected_obj].sceltaVS == 3) {
+			Scena[selected_obj].sceltaFS = 1;
+		}
+		else if(Scena[selected_obj].sceltaVS == 4){
+			Scena[selected_obj].sceltaFS = 2;
+		}
+		else {
+			Scena[selected_obj].sceltaFS = 0;
+		}
+	}
 }
+
 void buildOpenGLMenu()
 {
 	int materialSubMenu = glutCreateMenu(material_menu_function);
@@ -47,9 +57,10 @@ void buildOpenGLMenu()
 
 	int shaderSubMenu = glutCreateMenu(shader_menu_function);
 	glutAddMenuEntry(shaders[ShaderOption::NONE].name.c_str(), ShaderOption::NONE);
-	glutAddMenuEntry(shaders[ShaderOption::GOURAUD_SHADING].name.c_str(), ShaderOption::GOURAUD_SHADING);
-	glutAddMenuEntry(shaders[ShaderOption::BLINN_PHONG_SHADING].name.c_str(), ShaderOption::BLINN_PHONG_SHADING);
-	glutAddMenuEntry(shaders[ShaderOption::PHONG_SHADING].name.c_str(), ShaderOption::PHONG_SHADING);
+	glutAddMenuEntry(shaders[ShaderOption::PHONG_ILL_INT_SHADING].name.c_str(), ShaderOption::PHONG_ILL_INT_SHADING);
+	glutAddMenuEntry(shaders[ShaderOption::BLINN_PHONG_ILL_INT_SHADING].name.c_str(), ShaderOption::BLINN_PHONG_ILL_INT_SHADING);
+	glutAddMenuEntry(shaders[ShaderOption::PHONG_ILL_PHONG_SHADING].name.c_str(), ShaderOption::PHONG_ILL_PHONG_SHADING);
+	glutAddMenuEntry(shaders[ShaderOption::BLINN_PHONG_ILL_PHONG_SHADING].name.c_str(), ShaderOption::BLINN_PHONG_ILL_PHONG_SHADING);
 	glutAddMenuEntry(shaders[ShaderOption::CARTOON_SHADING].name.c_str(), ShaderOption::CARTOON_SHADING);
 
 

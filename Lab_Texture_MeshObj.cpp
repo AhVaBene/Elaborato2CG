@@ -188,16 +188,18 @@ void INIT_Illuminazione()
 	materials[MaterialType::NO_MATERIAL].shininess = 1.f;
 
 	//Setup degli shader
-	shaders.resize(5);
+	shaders.resize(6);
 	shaders[ShaderOption::NONE].value = 0;
 	shaders[ShaderOption::NONE].name = "NONE";
-	shaders[ShaderOption::GOURAUD_SHADING].value = 1;
-	shaders[ShaderOption::GOURAUD_SHADING].name = "ILLUMINAZIONE DI PHONG CON SHADING DI GOURAUD";
-	shaders[ShaderOption::BLINN_PHONG_SHADING].value = 2;
-	shaders[ShaderOption::BLINN_PHONG_SHADING].name = "ILLUMINAZIONE DI BLINN-PHONG CON SHADING DI GOURAUD";
-	shaders[ShaderOption::PHONG_SHADING].value = 3;
-	shaders[ShaderOption::PHONG_SHADING].name = "ILLUMINAZIONE DI PHONG CON SHADING DI PHONG";
-	shaders[ShaderOption::CARTOON_SHADING].value = 4;
+	shaders[ShaderOption::PHONG_ILL_INT_SHADING].value = 1;
+	shaders[ShaderOption::PHONG_ILL_INT_SHADING].name = "ILLUMINAZIONE DI PHONG CON SHADING INTERPOLATIVO";
+	shaders[ShaderOption::BLINN_PHONG_ILL_INT_SHADING].value = 2;
+	shaders[ShaderOption::BLINN_PHONG_ILL_INT_SHADING].name = "ILLUMINAZIONE DI BLINN-PHONG CON SHADING INTERPOLATIVO";
+	shaders[ShaderOption::PHONG_ILL_PHONG_SHADING].value = 3;
+	shaders[ShaderOption::PHONG_ILL_PHONG_SHADING].name = "ILLUMINAZIONE DI PHONG CON SHADING DI PHONG";
+	shaders[ShaderOption::BLINN_PHONG_ILL_PHONG_SHADING].value = 4;
+	shaders[ShaderOption::BLINN_PHONG_ILL_PHONG_SHADING].name = "ILLUMINAZIONE DI BLINN-PHONG CON SHADING DI PHONG";
+	shaders[ShaderOption::CARTOON_SHADING].value = 5;
 	shaders[ShaderOption::CARTOON_SHADING].name = "CARTOON SHADING";
 
 }
@@ -376,7 +378,7 @@ void INIT_VAO(void)
 		Model3D[i].ModelM = rotate(Model3D[i].ModelM, radians(90.0f), vec3(0.3, -1.0, 0.0));
 		Model3D[i].nome = "Spaceship1";
 		Model3D[i].sceltaVS = 3;
-		Model3D[i].sceltaFS = 3;
+		Model3D[i].sceltaFS = 4;
 	}
 
 	ScenaObj.push_back(Model3D);
@@ -399,7 +401,7 @@ void INIT_VAO(void)
 		Model3D[i].nome = "Alien Spaceship";
 
 		Model3D[i].sceltaVS = 3;
-		Model3D[i].sceltaFS = 3;
+		Model3D[i].sceltaFS = 4;
 	}
 	ScenaObj.push_back(Model3D);
 	
@@ -421,7 +423,7 @@ void INIT_VAO(void)
 		Model3D[i].nome = "Spaceship2";
 
 		Model3D[i].sceltaVS = 3;
-		Model3D[i].sceltaFS = 3;
+		Model3D[i].sceltaFS = 4;
 	}
 	ScenaObj.push_back(Model3D);
 
