@@ -18,18 +18,18 @@ F:\LAB CG\Assignment2\Assignment2\gestione_mouse.h(245,10): warning C4244: '=': 
 F:\LAB CG\Assignment2\Assignment2\gestione_telecamera.h(168,20): warning C4305: 'inizializzazione': troncamento da 'double' a 'float'
 F:\LAB CG\Assignment2\Assignment2\gestione_telecamera.h(84,8): warning C4101: 'intStr': variabile locale senza riferimenti
 F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(42,24): warning C4305: 'inizializzazione': troncamento da 'double' a 'float'
-F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(368,30): warning C4267: 'inizializzazione': conversione da 'size_t' a 'int'. Possibile perdita di dati.
-F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(390,26): warning C4267: '=': conversione da 'size_t' a 'int'. Possibile perdita di dati.
-F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(412,26): warning C4267: '=': conversione da 'size_t' a 'int'. Possibile perdita di dati.
-F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(476,25): warning C4244: 'argomento': conversione da 'float' a 'GLsizei'. Possibile perdita di dati.
-F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(477,17): warning C4244: '=': conversione da 'float' a 'int'. Possibile perdita di dati.
-F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(478,12): warning C4244: '=': conversione da 'float' a 'int'. Possibile perdita di dati.
-F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(482,22): warning C4244: 'argomento': conversione da 'float' a 'GLsizei'. Possibile perdita di dati.
-F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(483,12): warning C4244: '=': conversione da 'float' a 'int'. Possibile perdita di dati.
-F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(484,17): warning C4244: '=': conversione da 'float' a 'int'. Possibile perdita di dati.
-F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(504,90): warning C4267: 'argomento': conversione da 'size_t' a 'GLsizei'. Possibile perdita di dati.
-F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(524,96): warning C4267: 'argomento': conversione da 'size_t' a 'GLsizei'. Possibile perdita di dati.
-F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(565,40): warning C4267: 'inizializzazione': conversione da 'size_t' a 'int'. Possibile perdita di dati.
-F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(590,97): warning C4267: 'argomento': conversione da 'size_t' a 'GLsizei'. Possibile perdita di dati.
-F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(624,100): warning C4267: 'argomento': conversione da 'size_t' a 'GLsizei'. Possibile perdita di dati.
+F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(370,30): warning C4267: 'inizializzazione': conversione da 'size_t' a 'int'. Possibile perdita di dati.
+F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(392,26): warning C4267: '=': conversione da 'size_t' a 'int'. Possibile perdita di dati.
+F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(414,26): warning C4267: '=': conversione da 'size_t' a 'int'. Possibile perdita di dati.
+F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(478,25): warning C4244: 'argomento': conversione da 'float' a 'GLsizei'. Possibile perdita di dati.
+F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(479,17): warning C4244: '=': conversione da 'float' a 'int'. Possibile perdita di dati.
+F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(480,12): warning C4244: '=': conversione da 'float' a 'int'. Possibile perdita di dati.
+F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(484,22): warning C4244: 'argomento': conversione da 'float' a 'GLsizei'. Possibile perdita di dati.
+F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(485,12): warning C4244: '=': conversione da 'float' a 'int'. Possibile perdita di dati.
+F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(486,17): warning C4244: '=': conversione da 'float' a 'int'. Possibile perdita di dati.
+F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(506,90): warning C4267: 'argomento': conversione da 'size_t' a 'GLsizei'. Possibile perdita di dati.
+F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(526,96): warning C4267: 'argomento': conversione da 'size_t' a 'GLsizei'. Possibile perdita di dati.
+F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(567,40): warning C4267: 'inizializzazione': conversione da 'size_t' a 'int'. Possibile perdita di dati.
+F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(592,97): warning C4267: 'argomento': conversione da 'size_t' a 'GLsizei'. Possibile perdita di dati.
+F:\LAB CG\Assignment2\Assignment2\Lab_Texture_MeshObj.cpp(626,100): warning C4267: 'argomento': conversione da 'size_t' a 'GLsizei'. Possibile perdita di dati.
   Assignment2.vcxproj -> F:\LAB CG\Assignment2\x64\Debug\Assignment2.exe

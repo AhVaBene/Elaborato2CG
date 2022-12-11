@@ -57,11 +57,31 @@ void main()
 
 
     }else if (sceltaFS==2){
+     //Shading di Phong per modello di illuminazione di Blinn-Phong
+
+            vec3 ambient = strenght*light.power * material.ambient;
+
+            //diffuse
+            float coseno_angolo_theta= max(dot(L,N), 0);
+
+            vec3 diffuse = light.power * light.color * coseno_angolo_theta * material.diffuse;
+
+            //speculare
+            float coseno_angolo_beta =  pow(max(dot(N,H),0),material.shininess);
+
+            vec3 specular =  light.power * light.color * coseno_angolo_beta * material.specular;
+
+            FragColor = vec4(ambient + diffuse + specular, 1.0);      
+
+            FragColor=mix(FragColor,texture(id_tex,vec2(frag_coord_st.x,frag_coord_st.y)),0.3);
+
+
+    }else if (sceltaFS==3){
     //no shading no texture
 	 FragColor=ourColor;
 
 
-     }else if (sceltaFS==3){
+     }else if (sceltaFS==4){
      //Shading di Phong per modello di illuminazione di Phong senza texturing da usare per mesh obj
 
             vec3 ambient = strenght*light.power * material.ambient;
