@@ -165,6 +165,32 @@ void main()
     }
      if (sceltaVS==4)
     {
+       //Modello di illuminazione di Blinn-Phong con shading di Phong
+            gl_Position = Projection*View*Model*vec4(aPos, 1.0);
+
+            //Trasformare le coordinate del vertice da elaborare (aPos) in coordinate di vista
+            vec4 eyePosition= View*Model*vec4(aPos,1.0);
+
+            //Trasformiamo la posizione della luce nelle coordinate di vista
+
+            vec4 eyeLightPos= View * vec4(light.position, 1.0);
+
+            //trasformare le normali nel vertice in esame nel sistema di coordinate di vista
+
+              mat3 G= mat3(transpose(inverse(View*Model)));
+             N= normalize(G*vertexNormal);     
+            
+            //Calcoliamo la direzione della luce L, la direzione riflessione R e di vista
+
+              V= normalize(viewPos - eyePosition.xyz);
+             L = normalize((eyeLightPos- eyePosition).xyz);
+             H=normalize(L+V); //Costruisce il vettore H a metà tra direzione di luce e di vista
+
+             frag_coord_st=coord_st;
+             
+    }
+     if (sceltaVS==5)
+    {
     //Shader  tipo cartoon
         gl_Position = Projection*View*Model*vec4(aPos, 1.0);
         //Trasformare le coordinate del vertice da elaborare (aPos) in coordinate di vista
@@ -183,9 +209,7 @@ void main()
 	    else if (intensity > 0.25)
 	    	ourColor  = vec4(0.7,0.3,0.3,1.0);
     	else
-		ourColor  = vec4(0.6,0.3,0.3,1.0);
-         frag_coord_st=coord_st;
+		    ourColor  = vec4(0.6,0.3,0.3,1.0);
+        frag_coord_st=coord_st;
     }     
-    
 }  
-
