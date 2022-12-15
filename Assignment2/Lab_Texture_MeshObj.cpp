@@ -328,7 +328,7 @@ void INIT_VAO(void)
 	Proiettile1.sceltaFS = 0;
 	Scena.push_back(Proiettile1);
 
-	crea_sfera(&Proiettile2, vec4(1.0, 0.0, 0.0, 1.0));
+	crea_sfera(&Proiettile2, vec4(0.0, 0.0, 1.0, 1.0));
 	crea_VAO_Vector(&Proiettile2);
 	Proiettile2.ModelM = mat4(1.0);
 	Proiettile2.ModelM = translate(Proiettile2.ModelM, vec3(-50.0, 5.0, 0.0)); //5.0, 25.0, -6.0
@@ -339,7 +339,7 @@ void INIT_VAO(void)
 	Proiettile2.sceltaFS = 0;
 	Scena.push_back(Proiettile2);
 
-	crea_sfera(&Proiettile3, vec4(1.0, 0.0, 0.0, 1.0));
+	crea_sfera(&Proiettile3, vec4(0.0, 1.0, 0.0, 1.0));
 	crea_VAO_Vector(&Proiettile3);
 	Proiettile3.ModelM = mat4(1.0);
 	Proiettile3.ModelM = translate(Proiettile3.ModelM, vec3(-50.0, 5.0, 5.0)); // 5.0, 19.0, 12.0
@@ -470,8 +470,8 @@ void resize(int w, int h)
 	//Imposto la matrice di proiezione per la scena da diegnare
 	Projection = perspective(radians(PerspectiveSetup.fovY), PerspectiveSetup.aspect, PerspectiveSetup.near_plane, PerspectiveSetup.far_plane);
 
-	float AspectRatio_mondo = (float)(width) / (float)(height); //Rapporto larghezza altezza di tutto ciÚ che Ë nel mondo
-	 //Se l'aspect ratio del mondo Ë diversa da quella della finestra devo mappare in modo diverso 
+	float AspectRatio_mondo = (float)(width) / (float)(height); //Rapporto larghezza altezza di tutto ci√≤ che √® nel mondo
+	 //Se l'aspect ratio del mondo √® diversa da quella della finestra devo mappare in modo diverso 
 	 //per evitare distorsioni del disegno
 	if (AspectRatio_mondo > w / h)   //Se ridimensioniamo la larghezza della Viewport
 	{
@@ -510,7 +510,7 @@ void drawScene(void)
 	 
 	//Costruisco la matrice di Vista che applicata ai vertici in coordinate del mondo li trasforma nel sistema di riferimento della camera.
 	
-	//Passo al Vertex Shader il puntatore alla matrice View, che sar‡ associata alla variabile Uniform mat4 Projection
+	//Passo al Vertex Shader il puntatore alla matrice View, che sar√† associata alla variabile Uniform mat4 Projection
    //all'interno del Vertex shader. Uso l'identificatio MatView
 	glPointSize(10.0);
 
@@ -529,7 +529,7 @@ void drawScene(void)
 	glUseProgram(programId);
 	glUniformMatrix4fv(MatView, 1, GL_FALSE, value_ptr(View));
 
-	//Passo allo shader il puntatore a  colore luce, posizione ed intensit‡
+	//Passo allo shader il puntatore a  colore luce, posizione ed intensit√†
 	 
 	//glUniform3f(light_unif.light_position_pointer, light.position.x + 10 * cos(radians(angolo)), light.position.y, light.position.z + 10 * sin(radians(angolo)));
 	glUniform3f(light_unif.light_position_pointer, light.position.x  , light.position.y, light.position.z);
@@ -547,7 +547,7 @@ void drawScene(void)
 
 		Scena[k].ancora_world = Scena[k].ancora_obj;
 		Scena[k].ancora_world = Scena[k].ModelM * Scena[k].ancora_world;
-		//Passo al Vertex Shader il puntatore alla matrice Model dell'oggetto k-esimo della Scena, che sar‡ associata alla variabile Uniform mat4 Projection
+		//Passo al Vertex Shader il puntatore alla matrice Model dell'oggetto k-esimo della Scena, che sar√† associata alla variabile Uniform mat4 Projection
 		//all'interno del Vertex shader. Uso l'identificatio MatModel
 		 
 		glUniformMatrix4fv(MatModel, 1, GL_FALSE, value_ptr(Scena[k].ModelM));
@@ -596,7 +596,7 @@ void drawScene(void)
 	 
 	}
 	//Visualizzo gli oggetti di tipo Mesh Obj caricati dall'esterno: 
-	//la j-esima Mesh Ë costituita da ScenaObj[j].size() mesh. 
+	//la j-esima Mesh √® costituita da ScenaObj[j].size() mesh. 
 	for (int j = 0; j < ScenaObj.size() ; j++)
 	{
 
@@ -606,7 +606,7 @@ void drawScene(void)
 			//Trasformazione delle coordinate dell'ancora dal sistema di riferimento dell'oggetto in sistema
 			//di riferimento del mondo premoltiplicando per la matrice di Modellazione.
 
-			//Passo al Vertex Shader il puntatore alla matrice Model dell'oggetto k-esimo della Scena, che sar‡ associata alla variabile Uniform mat4 Projection
+			//Passo al Vertex Shader il puntatore alla matrice Model dell'oggetto k-esimo della Scena, che sar√† associata alla variabile Uniform mat4 Projection
 			//all'interno del Vertex shader. Uso l'identificatio MatModel
 
 
@@ -676,7 +676,7 @@ int main(int argc, char* argv[])
 
 	
 
-	//Abilita l'uso del Buffer di Profondit‡ per la gestione dell'eliminazione dlele superifici nascoste
+	//Abilita l'uso del Buffer di Profondit√† per la gestione dell'eliminazione dlele superifici nascoste
 	glEnable(GL_DEPTH_TEST);
 
 	glEnable(GL_DEPTH_TEST);
@@ -689,13 +689,13 @@ int main(int argc, char* argv[])
 
 	
 	//Chiedo che mi venga restituito l'identificativo della variabile uniform mat4 Projection (in vertex shader).
-	//QUesto identificativo sar‡ poi utilizzato per il trasferimento della matrice Projection al Vertex Shader
+	//QUesto identificativo sar√† poi utilizzato per il trasferimento della matrice Projection al Vertex Shader
 	MatrixProj = glGetUniformLocation(programId, "Projection");
 	//Chiedo che mi venga restituito l'identificativo della variabile uniform mat4 Model (in vertex shader)
-	//QUesto identificativo sar‡ poi utilizzato per il trasferimento della matrice Model al Vertex Shader
+	//QUesto identificativo sar√† poi utilizzato per il trasferimento della matrice Model al Vertex Shader
 	MatModel = glGetUniformLocation(programId, "Model");
 	//Chiedo che mi venga restituito l'identificativo della variabile uniform mat4 View (in vertex shader)
-	//QUesto identificativo sar‡ poi utilizzato per il trasferimento della matrice View al Vertex Shader
+	//QUesto identificativo sar√† poi utilizzato per il trasferimento della matrice View al Vertex Shader
 	MatView = glGetUniformLocation(programId, "View");
  	lsceltaVS = glGetUniformLocation(programId, "sceltaVS");
 	lsceltaFS= glGetUniformLocation(programId, "sceltaFS");
@@ -715,11 +715,11 @@ int main(int argc, char* argv[])
 	//location variabili uniformi per lo shader della gestione della cubemap
 	MatrixProjS = glGetUniformLocation(programId1, "Projection");
 	//Chiedo che mi venga restituito l'identificativo della variabile uniform mat4 Model (in vertex shader)
-	//QUesto identificativo sar‡ poi utilizzato per il trasferimento della matrice Model al Vertex Shader
+	//QUesto identificativo sar√† poi utilizzato per il trasferimento della matrice Model al Vertex Shader
 
 
 	//Chiedo che mi venga restituito l'identificativo della variabile uniform mat4 Model (in vertex shader)
-	//QUesto identificativo sar‡ poi utilizzato per il trasferimento della matrice Model al Vertex Shader
+	//QUesto identificativo sar√† poi utilizzato per il trasferimento della matrice Model al Vertex Shader
 	MatViewS = glGetUniformLocation(programId1, "View");
 
  
