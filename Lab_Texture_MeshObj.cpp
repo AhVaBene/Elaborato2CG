@@ -328,7 +328,7 @@ void INIT_VAO(void)
 	Proiettile1.sceltaFS = 0;
 	Scena.push_back(Proiettile1);
 
-	crea_sfera(&Proiettile2, vec4(1.0, 0.0, 0.0, 1.0));
+	crea_sfera(&Proiettile2, vec4(0.0, 0.0, 1.0, 1.0));
 	crea_VAO_Vector(&Proiettile2);
 	Proiettile2.ModelM = mat4(1.0);
 	Proiettile2.ModelM = translate(Proiettile2.ModelM, vec3(-50.0, 5.0, 0.0)); //5.0, 25.0, -6.0
@@ -339,7 +339,7 @@ void INIT_VAO(void)
 	Proiettile2.sceltaFS = 0;
 	Scena.push_back(Proiettile2);
 
-	crea_sfera(&Proiettile3, vec4(1.0, 0.0, 0.0, 1.0));
+	crea_sfera(&Proiettile3, vec4(0.0, 1.0, 0.0, 1.0));
 	crea_VAO_Vector(&Proiettile3);
 	Proiettile3.ModelM = mat4(1.0);
 	Proiettile3.ModelM = translate(Proiettile3.ModelM, vec3(-50.0, 5.0, 5.0)); // 5.0, 19.0, 12.0
