@@ -119,7 +119,7 @@ void main()
               V= normalize(viewPos - eyePosition.xyz);
               L = normalize((eyeLightPos- eyePosition).xyz);
              
-              H=normalize(L+V); //Costruisce il vettore H a metà tra direzione di luce e di vista
+              H=normalize(L+V); //Costruisce il vettore H a metÃ  tra direzione di luce e di vista
             //ambientale
             vec3 ambient = strenght*light.power * material.ambient;
 
@@ -184,7 +184,7 @@ void main()
 
               V= normalize(viewPos - eyePosition.xyz);
              L = normalize((eyeLightPos- eyePosition).xyz);
-             H=normalize(L+V); //Costruisce il vettore H a metà tra direzione di luce e di vista
+             H=normalize(L+V); //Costruisce il vettore H a metÃ  tra direzione di luce e di vista
 
              frag_coord_st=coord_st;
              
@@ -203,13 +203,13 @@ void main()
 
         float intensity= normalize(dot(L,N));
         if (intensity > 0.95)
-	    	ourColor  = vec4(1.0,0.5,0.5,1.0);
+	    	ourColor  = vec4(aColor.rgb,1);
 	    else if (intensity > 0.5)
-		    ourColor  = vec4(0.8,0.4,0.4,1.0);
+		    ourColor  = vec4((aColor - vec4(0.2)).rgb,1);
 	    else if (intensity > 0.25)
-	    	ourColor  = vec4(0.7,0.3,0.3,1.0);
+	    	ourColor  = vec4((aColor - vec4(0.4)).rgb,1);
     	else
-		    ourColor  = vec4(0.6,0.3,0.3,1.0);
+		    ourColor  = vec4((aColor - vec4(0.6)).rgb,1);
         frag_coord_st=coord_st;
     }     
 }  
