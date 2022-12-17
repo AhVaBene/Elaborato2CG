@@ -328,7 +328,7 @@ void INIT_VAO(void)
 	Proiettile1.sceltaFS = 0;
 	Scena.push_back(Proiettile1);
 
-	crea_sfera(&Proiettile2, vec4(1.0, 0.0, 0.0, 1.0));
+	crea_sfera(&Proiettile2, vec4(0.0, 0.0, 1.0, 1.0));
 	crea_VAO_Vector(&Proiettile2);
 	Proiettile2.ModelM = mat4(1.0);
 	Proiettile2.ModelM = translate(Proiettile2.ModelM, vec3(-50.0, 5.0, 0.0)); //5.0, 25.0, -6.0
@@ -339,7 +339,7 @@ void INIT_VAO(void)
 	Proiettile2.sceltaFS = 0;
 	Scena.push_back(Proiettile2);
 
-	crea_sfera(&Proiettile3, vec4(1.0, 0.0, 0.0, 1.0));
+	crea_sfera(&Proiettile3, vec4(0.0, 1.0, 0.0, 1.0));
 	crea_VAO_Vector(&Proiettile3);
 	Proiettile3.ModelM = mat4(1.0);
 	Proiettile3.ModelM = translate(Proiettile3.ModelM, vec3(-50.0, 5.0, 5.0)); // 5.0, 19.0, 12.0
@@ -364,17 +364,17 @@ void INIT_VAO(void)
 
 	bool obj;
 	
-	name = "spaceship.obj";
+	name = "Delta Glyder flying.obj";
 	path = Meshdir + name;
-	obj = loadAssImp(path.c_str(), Model3D);   //OK ombrellone.obj, divano.obj, low_poly_house,man
+	obj = loadAssImp(path.c_str(), Model3D); 
 	int nmeshes = Model3D.size();
 
 	for (int i = 0; i < nmeshes; i++)
 	{
 		crea_VAO_Vector_MeshObj(&Model3D[i]);
 		Model3D[i].ModelM = mat4(1.0);
-		Model3D[i].ModelM = translate(Model3D[i].ModelM, vec3(-100.0, -10.0, -5.0));
-		Model3D[i].ModelM = scale(Model3D[i].ModelM, vec3(4.0, 4.0, 4.0));
+		Model3D[i].ModelM = translate(Model3D[i].ModelM, vec3(-110.0, -10.0, -5.0));
+		Model3D[i].ModelM = scale(Model3D[i].ModelM, vec3(0.08, 0.08, 0.08));
 		Model3D[i].ModelM = rotate(Model3D[i].ModelM, radians(90.0f), vec3(0.3, -1.0, 0.0));
 		Model3D[i].nome = "Spaceship1";
 		Model3D[i].sceltaVS = 3;
@@ -387,7 +387,7 @@ void INIT_VAO(void)
 	
 	name = "alien interceptor flying.obj";
 	path = Meshdir + name;
-	obj = loadAssImp(path.c_str(), Model3D);   //OK ombrellone.obj, divano.obj, low_poly_house,man
+	obj = loadAssImp(path.c_str(), Model3D); 
 
 	nmeshes = Model3D.size();
 
@@ -409,7 +409,7 @@ void INIT_VAO(void)
 	
 	name = "justigue league flying vehicle.obj";
 	path = Meshdir + name;
-	obj = loadAssImp(path.c_str(), Model3D);   //OK ombrellone.obj, divano.obj, low_poly_house,man
+	obj = loadAssImp(path.c_str(), Model3D); 
 
 	nmeshes = Model3D.size();
 
