@@ -364,17 +364,17 @@ void INIT_VAO(void)
 
 	bool obj;
 	
-	name = "spaceship.obj";
+	name = "Delta Glyder flying.obj";
 	path = Meshdir + name;
-	obj = loadAssImp(path.c_str(), Model3D);   //OK ombrellone.obj, divano.obj, low_poly_house,man
+	obj = loadAssImp(path.c_str(), Model3D); 
 	int nmeshes = Model3D.size();
 
 	for (int i = 0; i < nmeshes; i++)
 	{
 		crea_VAO_Vector_MeshObj(&Model3D[i]);
 		Model3D[i].ModelM = mat4(1.0);
-		Model3D[i].ModelM = translate(Model3D[i].ModelM, vec3(-100.0, -10.0, -5.0));
-		Model3D[i].ModelM = scale(Model3D[i].ModelM, vec3(4.0, 4.0, 4.0));
+		Model3D[i].ModelM = translate(Model3D[i].ModelM, vec3(-110.0, -10.0, -5.0));
+		Model3D[i].ModelM = scale(Model3D[i].ModelM, vec3(0.08, 0.08, 0.08));
 		Model3D[i].ModelM = rotate(Model3D[i].ModelM, radians(90.0f), vec3(0.3, -1.0, 0.0));
 		Model3D[i].nome = "Spaceship1";
 		Model3D[i].sceltaVS = 3;
@@ -387,7 +387,7 @@ void INIT_VAO(void)
 	
 	name = "alien interceptor flying.obj";
 	path = Meshdir + name;
-	obj = loadAssImp(path.c_str(), Model3D);   //OK ombrellone.obj, divano.obj, low_poly_house,man
+	obj = loadAssImp(path.c_str(), Model3D); 
 
 	nmeshes = Model3D.size();
 
@@ -409,7 +409,7 @@ void INIT_VAO(void)
 	
 	name = "justigue league flying vehicle.obj";
 	path = Meshdir + name;
-	obj = loadAssImp(path.c_str(), Model3D);   //OK ombrellone.obj, divano.obj, low_poly_house,man
+	obj = loadAssImp(path.c_str(), Model3D); 
 
 	nmeshes = Model3D.size();
 

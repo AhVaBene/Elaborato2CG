@@ -1,0 +1,78 @@
+newmtl default
+d 1
+Ns 1
+Ni 0
+Ka 0 0 0
+Kd 1 1 1
+Ks 1 1 1
+Km 0
+map_Kd /Maps/cpp1.jpg
+
+newmtl default_body
+d 1
+Ns 1
+Ni 0
+Ka 0 0 0
+Kd 0 0 0
+Ks 1 1 1
+Km 0
+
+newmtl default_ship
+d 1
+Ns 1
+Ni 0
+Ka 0 0 0
+Kd 0.694118 0.74902 0.611765
+Ks 1 1 1
+Km 0
+map_Kd /Maps/cp1b.jpg
+
+newmtl default_eng
+d 1
+Ns 1
+Ni 0
+Ka 0 0 0
+Kd 0.25098 0.239216 0.290196
+Ks 1 1 1
+Km 0
+map_Kd /Maps/cp1b.jpg
+
+newmtl default_nozzle
+d 1
+Ns 1
+Ni 0
+Ka 0 0 0
+Kd 0.286275 0.282353 0.254902
+Ks 1 1 1
+Km 0
+map_Kd /Maps/dr2b.jpg
+
+newmtl default_fire
+d 1
+Ns 1
+Ni 0
+Ka 1 0.501961 0
+Kd 1 0.501961 0
+Ks 1 1 1
+Km 0
+
+newmtl default_entry
+d 1
+Ns 1
+Ni 0
+Ka 0 0 0
+Kd 0.25098 0.239216 0.290196
+Ks 1 1 1
+Km 0
+map_Kd /Maps/cpp1.jpg
+
+newmtl default_eng_1
+d 1
+Ns 1
+Ni 0
+Ka 0 0 0
+Kd 1 1 1
+Ks 1 1 1
+Km 0
+map_Kd /Maps/cp2c.jpg
+
